@@ -23,6 +23,10 @@ class ArticlesAdapter : RecyclerView.Adapter<ArticlesAdapter.ArticleHolder>()  {
         this.articles = articles
     }
 
+    companion object ExtraKeys {
+        const val article_id: String = "ARTICLE_ID"
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticleHolder {
         val inflatedView = parent.inflate(R.layout.article_fragment, false)
         return ArticleHolder(inflatedView)
@@ -41,7 +45,7 @@ class ArticlesAdapter : RecyclerView.Adapter<ArticlesAdapter.ArticleHolder>()  {
         view.setOnClickListener {
             val context = it.context
             val intent = Intent(context, ArticleActivity::class.java)
-            intent.putExtra("ARTICLE_ID", position)
+            intent.putExtra(article_id, position)
             context.startActivity(intent)
         }
 

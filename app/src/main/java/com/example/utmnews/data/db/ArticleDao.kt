@@ -11,8 +11,8 @@ import androidx.room.Query
 interface ArticleDao {
 
 
-    @Query("SELECT * from articles_table ORDER BY publishedAt ASC")
-    fun getAlphabetizedWords(): List<ArticleEntity>
+    @Query("SELECT * from articles_table ORDER BY publishedAt DESC")
+    fun getAllArticles(): LiveData<List<ArticleEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun addArticle(articleList: List<ArticleEntity>)

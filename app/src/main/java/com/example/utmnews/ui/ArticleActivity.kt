@@ -12,7 +12,7 @@ class ArticleActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_article)
-        val art: TextView = findViewById<TextView>(R.id.article_id)
-        art.text = intent.getIntExtra("ARTICLE_ID", 0).toString()
+        val art: TextView = findViewById(R.id.article_id)
+        art.text = intent.getIntExtra(ArticlesAdapter.article_id, 0).toString()
     }
 }
