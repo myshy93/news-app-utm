@@ -1,7 +1,7 @@
 package com.example.utmnews.data.api
 
 
-data class Article(
+data class TestArticle(
     val id: Int,
     val name: String,
     val category: String,
@@ -11,7 +11,7 @@ data class Article(
 val testArticles =
     (1..100)
         .map { number ->
-            Article(
+            TestArticle(
                 id = number,
                 name = "ArticleActivity $number",
                 category = "Category ${number / 2}",

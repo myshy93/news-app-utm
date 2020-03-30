@@ -1,14 +1,11 @@
 package com.example.utmnews.data.adapters
 
 import android.content.Intent
-import android.util.Log
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.utmnews.R
-import com.example.utmnews.data.api.Article
+import com.example.utmnews.data.api.TestArticle
 import com.example.utmnews.data.api.testArticles
 import com.example.utmnews.inflate
 import com.example.utmnews.ui.ArticleActivity
@@ -17,9 +14,9 @@ import kotlinx.android.synthetic.main.article_fragment.view.*
 
 class ArticlesAdapter : RecyclerView.Adapter<ArticlesAdapter.ArticleHolder>()  {
 
-    private lateinit var articles: List<Article>
+    private lateinit var articles: List<TestArticle>
 
-    fun setArticles(articles: List<Article>) {
+    fun setArticles(articles: List<TestArticle>) {
         this.articles = articles
     }
 
@@ -54,7 +51,7 @@ class ArticlesAdapter : RecyclerView.Adapter<ArticlesAdapter.ArticleHolder>()  {
     class ArticleHolder(v: View): RecyclerView.ViewHolder(v) {
 
         private var view: View = v
-        private var article: Article? = null
+        private var article: TestArticle? = null
 
 
         companion object {
@@ -65,7 +62,7 @@ class ArticlesAdapter : RecyclerView.Adapter<ArticlesAdapter.ArticleHolder>()  {
             return view
         }
 
-        fun bind(article: Article) {
+        fun bind(article: TestArticle) {
             this.article = article
             view.article_title.text = article.name
             view.article_description.text = article.category

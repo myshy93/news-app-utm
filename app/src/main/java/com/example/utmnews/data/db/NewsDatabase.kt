@@ -4,10 +4,10 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.utmnews.data.api.Article
+import com.example.utmnews.data.api.TestArticle
 
-// Annotates class to be a Room Database with a table (entity) of the Article class
-@Database(entities = [Article::class], version = 1, exportSchema = false)
+// Annotates class to be a Room Database with a table (entity) of the TestArticle class
+@Database(entities = [TestArticle::class], version = 1, exportSchema = false)
 abstract class NewsDatabase : RoomDatabase() {
 
     abstract fun articleDao(): ArticleDao
